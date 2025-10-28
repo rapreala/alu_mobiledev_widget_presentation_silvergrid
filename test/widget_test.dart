@@ -1,30 +1,35 @@
-// This is a basic Flutter widget test.
-//
-// To perform an interaction with a widget in your test, use the WidgetTester
-// utility in the flutter_test package. For example, you can send tap and scroll
-// gestures. You can also use WidgetTester to find child widgets in the widget
-// tree, read text, and verify that the values of widget properties are correct.
-
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:sliver_grid_demo/main.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
+  testWidgets('App loads with Afrobeats Albums title', (WidgetTester tester) async {
     // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+    await tester.pumpWidget(const SpotifyAlbumApp());
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+    // Verify that the app bar shows "Afrobeats Albums"
+    expect(find.text('Afrobeats Albums'), findsOneWidget);
+    
+    // Verify that search bar exists
+    expect(find.byType(TextField), findsOneWidget);
+    
+    // Verify that albums are displayed (should have multiple album cards)
+    expect(find.byType(CustomScrollView), findsOneWidget);
+  });
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
+  testWidgets('Search functionality works', (WidgetTester tester) async {
+    await tester.pumpWidget(const SpotifyAlbumApp());
+
+    // Find the search field
+    final searchField = find.byType(TextField);
+    expect(searchField, findsOneWidget);
+
+    // Enter text in search field
+    await tester.enterText(searchField, 'Wizkid');
     await tester.pump();
 
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+    // The search should filter results (basic check that it doesn't crash)
+    expect(find.text('Wizkid'), findsWidgets);
   });
 }

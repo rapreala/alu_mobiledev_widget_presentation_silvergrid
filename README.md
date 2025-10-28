@@ -88,15 +88,6 @@ This demo includes albums from popular Afrobeats artists:
 - **Responsive grid layout** that adapts to screen size
 - **Clean typography** with proper text overflow handling
 
-## Code Structure
-```
-lib/
-└── main.dart
-    ├── SpotifyAlbumApp (Root widget with dark theme)
-    ├── AlbumGridScreen (Main screen with SliverGrid)
-    ├── AlbumCard (Individual album card)
-    └── _afrobeatsAlbums (Album data)
-```
 
 ## Key Code Section
 The main SliverGrid implementation:
@@ -121,14 +112,6 @@ SliverGrid(
   ),
 )
 ```
-
-## Customization Ideas
-- Add real album cover images using `Image.network()` or `Image.asset()`
-- Implement tap functionality to play albums
-- Add a search bar to filter albums
-- Include album release years
-- Add genre tags or categories
-- Implement favorite/like functionality
 
 ## Screenshot
 ![Afrobeats Album Grid Screenshot](screenshot.png)
