@@ -141,7 +141,7 @@ SliverGrid(
 
 ---
 
-**Created by:** [Your Name]  
+**Created by:** Ryan Apreala 
 **Date:** October 28, 2025  
 **Course:** Mobile Application Development - ALU  
 **Theme:** Celebrating Afrobeats Music 🎵🌍
