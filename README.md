@@ -1,4 +1,4 @@
-# SliverGrid Demo - Afrobeats Album Grid
+# SilverGrid Demo - Afrobeats Album Grid
 
 A Spotify-inspired album grid showcasing popular Afrobeats albums and demonstrating the **SliverGrid** widget in Flutter.
 
